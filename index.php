@@ -32,17 +32,17 @@
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                                <option value="3">4</option>
-                                <option value="3">5</option>
-                                <option value="3">6</option>
-                                <option value="3">7</option>
-                                <option value="3">8</option>
-                                <option value="3">9</option>
-                                <option value="3">10</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
                             </select>
                         </div>
                         <div class="col-12 d-flex justify-content-center"> <button type="submit"
-                                class="btn btn-primary btn-sm mt-3">Submit</button></div>
+                                class="btn btn-primary btn-sm mt-3">Valider</button></div>
                     </div>
                 </form>
             </div>
@@ -53,6 +53,7 @@
     <div class="text-center">
         <?php 
             $listValueOption = $_POST['tablemultiplication'];
+            echo "<h3> Table du $listValueOption </h3><br/>";
             for ($nombre=1; $nombre <= 10; $nombre++){
             if(isset($listValueOption)){
             echo $listValueOption.'*'.$nombre.'='.$listValueOption*$nombre."<br/>";
@@ -65,67 +66,75 @@
     <div class="container-fluid">
         <div class="container">
             <h2 class="text-center mt-5 mb-4">Etape 2</h2>
-            <div class="row d-flex flex-wrap">
-                <form class="mx-auto" action="" method="post">
+            <div class="row">
+                <form class="mx-auto secondtable d-flex flex-wrap" action="" method="post">
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 1 </p><input class="mt-2" type="checkbox" id="check1"
-                            onclick="function1()" value="1">
+                        <input type="checkbox" name="table[]" value="1" id="table_1" class="mr-2 mt-1"> <label for="table_1">Table du 1</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 2 </p><input class="mt-2" type="checkbox" id="check2"
-                            onclick="function2()" value="2">
+                        <input type="checkbox" name="table[]" value="2" id="table_2" class="mr-2 mt-1"> <label for="table_2">Table du 2</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 3 </p><input class="mt-2" type="checkbox" id="check3"
-                            onclick="function3()" value="3">
+                        <input type="checkbox" name="table[]" value="3" id="table_3" class="mr-2 mt-1"> <label for="table_3">Table du 3</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 4 </p><input class="mt-2" type="checkbox" id="check4"
-                            onclick="function4()" value="4">
+                        <input type="checkbox" name="table[]" value="4" id="table_4" class="mr-2 mt-1"> <label for="table_4">Table du 4</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 5 </p><input class="mt-2" type="checkbox" id="check5"
-                            onclick="function5()" value="5">
+                        <input type="checkbox" name="table[]" value="5" id="table_5" class="mr-2 mt-1"> <label for="table_5">Table du 5</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 6 </p><input class="mt-2" type="checkbox" id="check6"
-                            onclick="function6()" value="6">
+                        <input type="checkbox" name="table[]" value="6" id="table_6" class="mr-2 mt-1"> <label for="table_6">Table du 6</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 7 </p><input class="mt-2" type="checkbox" id="check7"
-                            onclick="function7()" value="7">
+                        <input type="checkbox" name="table[]" value="7" id="table_7" class="mr-2 mt-1"> <label for="table_7">Table du 7</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 8 </p><input class="mt-2" type="checkbox" id="check8"
-                            onclick="function8()" value="8">
+                        <input type="checkbox" name="table[]" value="8" id="table_8" class="mr-2 mt-1"> <label for="table_8">Table du 8</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 9 </p><input class="mt-2" type="checkbox" id="check9"
-                            onclick="function9()" value="9">
+                    <input type="checkbox" name="table[]" value="9" id="table_9" class="mr-2 mt-1"> <label for="table_9">Table du 9</label>
                     </div>
+
                     <div class="d-flex mr-3">
-                        <p class="inputintitule">Table du 10</p> <input class="mt-2" type="checkbox" id="check10"
-                            onclick="function10()" value="10">
+                        <input type="checkbox" name="table[]" value="10" id="table_10" class="mr-2 mt-1"> <label for="table_10">Table du 10</label>
                     </div>
+
+                    <button type="submit" class="btn btn-primary btn-sm mt-3 mx-auto">Valider</button>
                 </form>
             </div>
 
             <div class="row d-flex flex-wrap mt-5">
-                <p id="text1" style="display:none" class="mr-5">
-                    <?php echo "Salut!"; ?>
-                </p>
-                <p id="text2" style="display:none" class="mr-5">Checkbox2 is CHECKED!</p>
-                <p id="text3" style="display:none" class="mr-5">Checkbox3 is CHECKED!</p>
-                <p id="text4" style="display:none" class="mr-5">Checkbox4 is CHECKED!</p>
-                <p id="text5" style="display:none" class="mr-5">Checkbox5 is CHECKED!</p>
-                <p id="text6" style="display:none" class="mr-5">Checkbox6 is CHECKED!</p>
-                <p id="text7" style="display:none" class="mr-5">Checkbox7 is CHECKED!</p>
-                <p id="text8" style="display:none" class="mr-5">Checkbox8 is CHECKED!</p>
-                <p id="text9" style="display:none" class="mr-5">Checkbox9 is CHECKED!</p>
-                <p id="text10" style="display:none" class="mr-5">Checkbox10 is CHECKED!</p>
+
+                    <?php
+                    foreach($_POST['table'] as $tableauvaleurs)
+                    {
+                        echo "<div class='mr-5 mb-5 pl-5'>";
+                        echo '<h3 class="text-center"> Table du '.$tableauvaleurs.'</h3>';
+                        for ($nombre=1; $nombre <= 10; $nombre++)
+                        {
+                            echo "<div class='text-center'>";
+                            echo $nombre.'x' .$tableauvaleurs. '=' .$nombre*$tableauvaleurs;
+                            echo" </div>";
+                        }
+                        echo "</div>";
+                    }
+                    ?>
+                
             </div>
         </div>
     </div>
+
+
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

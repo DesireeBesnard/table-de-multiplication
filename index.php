@@ -16,7 +16,7 @@
 
         <div>
             <div class="navbar navbar-default navbar-fixed-top">
-                <div class="brand-icon">Super<span class="color-change">Maths</span></div>
+                <div class="brand-icon">Super<span class="color-change">Maths</span>PHP</div>
                 <div class="menu-icon">
                     <span class="menu-icon__line menu-icon__line-left"></span>
                     <span class="menu-icon__line"></span>
@@ -25,11 +25,11 @@
             </div>
             <div class="nav">
                 <div class="nav__content">
-                    <ul class="nav__list">
-                        <li class="nav__list-item">Afficher une table</li>
-                        <li class="nav__list-item">Multisélection</li>
-                        <li class="nav__list-item">Mode révision</li>
-                        <li class="nav__list-item">Super Mode révision</li>
+                    <ul class="nav__list list-unstyled">
+                        <li class="nav__list-item"><a href="index.php" class="text-decoration-none text-reset">Afficher une table</a></li>
+                        <li class="nav__list-item"><a href="multiselection.php" class="text-decoration-none text-reset">Multisélection</a></li>
+                        <li class="nav__list-item"><a href="revision.php" class="text-decoration-none text-reset">Mode révision</a></li>
+                        <li class="nav__list-item"><a href="superrevision.php" class="text-decoration-none text-reset">Super mode révision</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,12 +38,12 @@
 
 
     <div class="container-fluid multiselection mb-5 pt-5">
-        <div class="container mt-5">
+        <div class="container mt-5 pt-5">
             <div class="row pt-5">
                 <h1 class="josephin text-white mx-auto mb-5">Table de multiplication</h1>
             </div>
 
-            <div class="row d-block">
+            <div class="row d-block mt-5">
                 <h2 class="text-center josephin mb-4">Afficher une table</h2>
                 <form class="mx-auto firstTable" action="" method="post">
                     <div class="form-row align-items-center">
@@ -81,157 +81,6 @@
             </div>
         </div>
     </div>
-
-
-    <div class="container-fluid moderevision">
-        <div class="container">
-            <h2 class="text-center  text-white josephin mt-5 mb-4">Multisélection</h2>
-            <div class="row">
-                <form class="mx-auto secondtable d-flex flex-wrap" action="" method="post">
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="1" id="table_1"
-                            class="mr-2 mt-1"> <label for="table_1">Table du 1</label>
-                    </div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="2" id="table_2"
-                            class="mr-2 mt-1"> <label for="table_2">Table du 2</label>
-                    </div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="3" id="table_3"
-                            class="mr-2 mt-1"> <label for="table_3">Table du 3</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="4" id="table_4"
-                            class="mr-2 mt-1"> <label for="table_4">Table du 4</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="5" id="table_5"
-                            class="mr-2 mt-1"> <label for="table_5">Table du 5</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="6" id="table_6"
-                            class="mr-2 mt-1"> <label for="table_6">Table du 6</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="7" id="table_7"
-                            class="mr-2 mt-1"> <label for="table_7">Table du 7</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="8" id="table_8"
-                            class="mr-2 mt-1"> <label for="table_8">Table du 8</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="9" id="table_9"
-                            class="mr-2 mt-1"> <label for="table_9">Table du 9</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="10" id="table_10"
-                            class="mr-2 mt-1"> <label for="table_10">Table du 10</label></div>
-
-                    <button type="submit" class="btn btn-primary btn-sm mt-3 mx-auto">Valider</button>
-                </form>
-            </div>
-
-            <div class="row d-flex flex-wrap mt-5">
-
-                <?php
-                foreach($_POST['table'] as $tableauvaleurs){
-                    echo "<div class='mr-5 mb-5 pl-5'>";
-                    echo '<h3 class="text-center"> Table du '.$tableauvaleurs.'</h3>';
-                        for ($nombre=1; $nombre <= 10; $nombre++){
-                            echo "<div class='text-center'>";
-                            echo $nombre.'x' .$tableauvaleurs. '=' .$nombre*$tableauvaleurs;
-                            echo" </div>";
-                        }
-                    echo "</div>";
-                }
-            ?>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid supermoderevision">
-        <div class="container">
-            <h2 class="text-center text-white josephin mt-5 mb-4">Mode révision</h2>
-            <div class="row">
-                <div class="col-12 d-block">
-                    <form class="mx-autor" action="" method="post">
-                        <div class="d-flex justify-content-center">
-                            <select class="form-control custom-select" id="exampleFormControlSelect1"
-                                name="thirdexercice">
-                                <option disabled selected> Choisir</option>
-                                <option value="1"> Table de 1</option>
-                                <option value="2"> Table de 2</option>
-                                <option value="3"> Table de 3</option>
-                                <option value="4"> Table de 4</option>
-                                <option value="5"> Table de 5</option>
-                                <option value="6"> Table de 6</option>
-                                <option value="7"> Table de 7</option>
-                                <option value="8"> Table de 8</option>
-                                <option value="9"> Table de 9</option>
-                                <option value="10"> Table de 10</option>
-                            </select>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row text-center d-flex justify-content-center">
-                <?php
-                    if (!empty($_POST) && isset($_POST['thirdexercice'])){
-                        $randnb = rand(1, 10);
-                        $thirdexercicevalue = $_POST['thirdexercice'];
-                        $result = $randnb * $thirdexercicevalue;
-                        echo 'Combien font '.$thirdexercicevalue.' x '.$randnb.' ? ';
-                    }
-
-                    if (!empty($_POST['result']) && isset($_POST['answer'])){
-                        $answer = $_POST['answer'];
-                        $result = $_POST['result'];
-                        if ($result == $answer){
-                            $won = 'Gagné! La réponse est bien ' .$result. ' . ';
-                        }
-                        else{
-                            $lost = 'Perdu...mais on ne désespère pas. La réponse était ' .$result. ' . ';
-                        }
-                    }
-                ?>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12 d-block">
-                    <form class="mx-autor" action="" method="post">
-                        <div class="d-flex justify-content-center">
-                            <input type="hidden" name="result" value="<?php echo $result ?>">
-                            <input type="text" name="answer">
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button>
-                        </div>
-                        <div class="text-center">  
-                            <?php 
-                                if(isset($won)) echo $won;
-                                if(isset($lost)) echo $lost;
-                            ?>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="container">
-            <h2 class="text-center text-white josephin mt-5 mb-4">Super mode révision</h2>
-            <div class="row">
-
-
-
-
-
-            
-            </div>
-        </div>
-    </div>
-
-
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -50,35 +50,34 @@
                         <div class="col-12 d-flex justify-content-center">
                             <select class="custom-select" id="inlineFormCustomSelect" name="tablemultiplication">
                                 <option selected disabled>Choisir</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
+                                <option value="1">Table de 1</option>
+                                <option value="2">Table de 2</option>
+                                <option value="3">Table de 3</option>
+                                <option value="4">Table de 4</option>
+                                <option value="5">Table de 5</option>
+                                <option value="6">Table de 6</option>
+                                <option value="7">Table de 7</option>
+                                <option value="8">Table de 8</option>
+                                <option value="9">Table de 9</option>
+                                <option value="10">Table de 10</option>
                             </select>
                         </div>
-                        <div class="col-12 d-flex justify-content-center"> <button type="submit"
-                                class="btn btn-primary btn-sm mt-3 mb-3">Valider</button></div>
+                        <div class="col-12 d-flex justify-content-center"> <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button></div>
                     </div>
                 </form>
             </div>
 
             <div class="text-center">
-
                 <?php 
                     $listValueOption = $_POST['tablemultiplication'];
                     for ($nombre=1; $nombre <= 10; $nombre++){
-                    if(isset($listValueOption)){
-                    echo $listValueOption.'x'.$nombre.'='.$listValueOption*$nombre."<br/>";
+                        if  (isset($listValueOption)){
+                            echo $listValueOption.'x'.$nombre.'='.$listValueOption*$nombre."<br/>";
+                        }
                     }
-                    }
-             ?>
+                ?>
             </div>
+            
         </div>
     </div>
 

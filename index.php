@@ -49,7 +49,7 @@
                     <div class="form-row align-items-center">
                         <div class="col-12 d-flex justify-content-center">
                             <select class="custom-select" id="inlineFormCustomSelect" name="tablemultiplication">
-                                <option selected>Choisir</option>
+                                <option selected disabled>Choisir</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -88,7 +88,7 @@
             <h2 class="text-center  text-white josephin mt-5 mb-4">Multisélection</h2>
             <div class="row">
                 <form class="mx-auto secondtable d-flex flex-wrap" action="" method="post">
-                
+
                     <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="1" id="table_1"
                             class="mr-2 mt-1"> <label for="table_1">Table du 1</label>
                     </div>
@@ -148,45 +148,71 @@
         <div class="container">
             <h2 class="text-center text-white josephin mt-5 mb-4">Mode révision</h2>
             <div class="row">
-                <form class="mx-auto third table d-flex flex-wrap" action="" method="post">
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="1" id="table_1" class="mr-2 mt-1"> <label for="table_1">Table du 1</label>
-                    </div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="2" id="table_2" class="mr-2 mt-1"> <label for="table_2">Table du 2</label>
-                    </div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="3" id="table_3" class="mr-2 mt-1"> <label for="table_3">Table du 3</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="4" id="table_4" class="mr-2 mt-1"> <label for="table_4">Table du 4</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="5" id="table_5" class="mr-2 mt-1"> <label for="table_5">Table du 5</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="6" id="table_6" class="mr-2 mt-1"> <label for="table_6">Table du 6</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="7" id="table_7" class="mr-2 mt-1"> <label for="table_7">Table du 7</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="8" id="table_8" class="mr-2 mt-1"> <label for="table_8">Table du 8</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="9" id="table_9" class="mr-2 mt-1"> <label for="table_9">Table du 9</label></div>
-
-                    <div class="d-flex mr-3"><input type="checkbox" name="randomTable[]" value="10" id="table_10" class="mr-2 mt-1"> <label for="table_10">Table du 10</label></div>
-
-                    <button type="submit" class="btn btn-primary btn-sm mt-3 mx-auto">Valider</button>
-                </form>
+                <div class="col-12 d-block">
+                    <form class="mx-autor" action="" method="post">
+                        <div class="d-flex justify-content-center">
+                            <select class="form-control custom-select" id="exampleFormControlSelect1"
+                                name="thirdexercice">
+                                <option disabled selected> Choisir</option>
+                                <option value="1"> Table de 1</option>
+                                <option value="2"> Table de 2</option>
+                                <option value="3"> Table de 3</option>
+                                <option value="4"> Table de 4</option>
+                                <option value="5"> Table de 5</option>
+                                <option value="6"> Table de 6</option>
+                                <option value="7"> Table de 7</option>
+                                <option value="8"> Table de 8</option>
+                                <option value="9"> Table de 9</option>
+                                <option value="10"> Table de 10</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-       
-            <?php
-                if(isset($_POST['randomTable'])) {
-                    if(!empty($_POST['randomTable'])){
-                        $randNb = rand(1,10);
-                        $revisionValueOption = $_POST['randomTable'];
-                        $randNb = rand(1,10);
-                        $resultat = $randNb * $revisionValueOption;
-                        echo $revisionValueOption. ' x ' .$randNb. ' = ';
+
+            <div class="row text-center d-flex justify-content-center">
+                <?php
+                    if (!empty($_POST) && isset($_POST['thirdexercice'])){
+                        $randnb = rand(1, 10);
+                        $thirdexercicevalue = $_POST['thirdexercice'];
+                        $result = $randnb * $thirdexercicevalue;
+                        echo 'Combien font '.$thirdexercicevalue.' x '.$randnb.' ? ';
                     }
-                }
-            ?>
+
+                    if (!empty($_POST['result']) && isset($_POST['answer'])){
+                        $answer = $_POST['answer'];
+                        $result = $_POST['result'];
+                        if ($result == $answer){
+                            $won = 'Gagné! La réponse est bien ' .$result. ' . ';
+                        }
+                        else{
+                            $lost = 'Perdu...mais on ne désespère pas. La réponse était ' .$result. ' . ';
+                        }
+                    }
+                ?>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 d-block">
+                    <form class="mx-autor" action="" method="post">
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" name="result" value="<?php echo $result ?>">
+                            <input type="text" name="answer">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button>
+                        </div>
+                        <div class="text-center">  
+                            <?php 
+                                if(isset($won)) echo $won;
+                                if(isset($lost)) echo $lost;
+                            ?>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -194,6 +220,12 @@
         <div class="container">
             <h2 class="text-center text-white josephin mt-5 mb-4">Super mode révision</h2>
             <div class="row">
+
+
+
+
+
+            
             </div>
         </div>
     </div>

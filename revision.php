@@ -50,7 +50,7 @@
 
             <div class="row">
                 <div class="col-12 d-block">
-                    <form class="mx-autor" action="" method="post">
+                    <form class="mx-autor" action="revision.php" method="post">
                         <div class="d-flex justify-content-center">
                             <select class="form-control custom-select" id="exampleFormControlSelect1"
                                 name="thirdexercice">
@@ -68,7 +68,7 @@
                             </select>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button>
+                            <button type="submit" class="btn btn-bg text-white josephin btn-sm mt-3 mb-3">Valider</button>
                         </div>
                     </form>
                 </div>
@@ -104,7 +104,7 @@
                             <input type="text" name="answer">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button>
+                            <button type="submit" class="btn btn-bg josephin text-white btn-sm mt-3 mb-3">Valider</button>
                         </div>
                         <div class="text-center">
                             <?php 

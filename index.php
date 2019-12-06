@@ -36,19 +36,18 @@
         </div>
     </div>
 
-
-    <div class="container-fluid multiselection mb-5 pt-5">
-        <div class="container mt-5 pt-5">
+    <div class="container-fluid mb-5 pt-5">
+        <div class="container affichage mt-5 mb-5 pt-5 pb-5">
             <div class="row pt-5">
                 <h1 class="josephin text-white mx-auto mb-5">Table de multiplication</h1>
             </div>
 
-            <div class="row d-block mt-5">
-                <h2 class="text-center josephin mb-4">Afficher une table</h2>
-                <form class="mx-auto firstTable" action="" method="post">
+            <div class="row d-block">
+                <h2 class="text-center josephin text-white">Afficher une table</h2>
+                <form action="" method="POST">
                     <div class="form-row align-items-center">
                         <div class="col-12 d-flex justify-content-center">
-                            <select class="custom-select" id="inlineFormCustomSelect" name="tablemultiplication">
+                            <select class="custom-select" name="tablemultiplication">
                                 <option selected disabled>Choisir</option>
                                 <option value="1">Table de 1</option>
                                 <option value="2">Table de 2</option>
@@ -62,7 +61,8 @@
                                 <option value="10">Table de 10</option>
                             </select>
                         </div>
-                        <div class="col-12 d-flex justify-content-center"> <button type="submit" class="btn btn-primary btn-sm mt-3 mb-3">Valider</button></div>
+                        <div class="col-12 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-bg btn-sm text-white josephin mt-3 mx-auto mb-5">Valider</button>
                     </div>
                 </form>
             </div>
@@ -70,14 +70,23 @@
             <div class="text-center">
                 <?php 
                     $listValueOption = $_POST['tablemultiplication'];
-                    for ($nombre=1; $nombre <= 10; $nombre++){
-                        if  (isset($listValueOption)){
-                            echo $listValueOption.'x'.$nombre.'='.$listValueOption*$nombre."<br/>";
+                    echo '<div class="pt-3 pb-4">';
+                    if(isset($listValueOption)){
+                        if(!empty($listValueOption)){
+                            echo '<div class="bg-white affichageresult mx-auto josephin pb-3">';
+                            echo '<h3 class="mx-auto mt-2 pt-3">Table du '.$listValueOption.'</h3>'; 
                         }
                     }
+                    for ($nombre=1; $nombre <= 10; $nombre++){
+                        if (isset($listValueOption)){
+                            echo $listValueOption.'*'.$nombre.'='.$listValueOption*$nombre."<br/>";
+                        }
+                    }
+                    echo '</div>';
+                    echo '</div>';
                 ?>
             </div>
-            
+
         </div>
     </div>
 

@@ -45,8 +45,8 @@
         <div class="container mt-5">
             <div class="row pt-5 d-block">
                 <h1 class="josephin text-white text-center mb-5">Multisélection</h1>
-                <h2 class="text-center  text-white josephin mt-5 mb-4">Afficher une ou plusieurs tables</h2>
-                <div class="row pt-5">
+                <h2 class="text-center  text-white josephin mt-0 mb-4">Afficher une ou plusieurs tables</h2>
+                <div class="row pt-2">
                     <form class="mx-auto secondtable" action="multiselection.php" method="post">
 
                         <div class="d-flex text-white josephin">
@@ -83,8 +83,8 @@
                                     class="mr-1 mt-1"> <label for="table_10">Table du 10</label></div>
                         </div>
 
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-bg text-white josephin btn-sm mt-3 mx-auto">Valider</button>
+                        <div class="d-flex justify-content-center pt-2">
+                            <button type="submit" class="btn btn-bg text-white josephin btn-sm mt-5 mx-auto">Valider</button>
                         </div>
 
                     </form>

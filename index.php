@@ -38,12 +38,12 @@
 
     <div class="container-fluid mb-5 pt-5">
         <div class="container affichage mt-5 mb-5 pt-5 pb-5">
-            <div class="row pt-5">
+            <div class="row">
                 <h1 class="josephin text-white mx-auto mb-5">Table de multiplication</h1>
             </div>
 
             <div class="row d-block">
-                <h2 class="text-center josephin text-white">Afficher une table</h2>
+                <h2 class="text-center josephin text-white pt-2">Afficher une table</h2>
                 <form action="" method="POST">
                     <div class="form-row align-items-center">
                         <div class="col-12 d-flex justify-content-center">
@@ -61,8 +61,8 @@
                                 <option value="10">Table de 10</option>
                             </select>
                         </div>
-                        <div class="col-12 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-bg btn-sm text-white josephin mt-3 mx-auto mb-5">Valider</button>
+                        <div class="col-12 d-flex justify-content-center pt-2">
+                        <button type="submit" class="btn btn-bg btn-sm text-white josephin mt-3 mx-auto mt-5 mb-5">Valider</button>
                     </div>
                 </form>
             </div>
@@ -70,7 +70,7 @@
             <div class="text-center">
                 <?php 
                     $listValueOption = $_POST['tablemultiplication'];
-                    echo '<div class="pt-3 pb-4">';
+                    echo '<div class="ç pb-4">';
                     if(isset($listValueOption)){
                         if(!empty($listValueOption)){
                             echo '<div class="bg-white affichageresult mx-auto josephin pb-3">';

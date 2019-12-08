@@ -68,14 +68,16 @@
                             </select>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-bg text-white josephin btn-sm mt-3 mb-3">Valider</button>
+                            <button type="submit"
+                                class="btn btn-bg text-white josephin btn-sm mt-5 mb-5">Valider</button>
                         </div>
                     </form>
                 </div>
             </div>
 
             <div class="row text-center d-flex justify-content-center">
-                <?php
+                <div class='bg-white revisionresult mx-auto josephin mt-5 mb-5 pt-3 pb-3'>
+                    <?php
                         if (!empty($_POST) && isset($_POST['thirdexercice'])){
                             $randnb = rand(1, 10);
                             $thirdexercicevalue = $_POST['thirdexercice'];
@@ -87,46 +89,42 @@
                             $answer = $_POST['answer'];
                             $result = $_POST['result'];
                             if ($result == $answer){
-                                $won = 'Gagné! La réponse est bien ' .$result. ' . ';
+                                $won = '<p class="text-success">Gagné! La réponse est bien ' .$result. ' .</p> ';
                             }
                             else{
-                                $lost = 'Perdu...mais on ne désespère pas. La réponse était ' .$result. ' . ';
+                                $lost = '<p class="text-danger">Perdu...mais on ne désespère pas. La réponse était ' .$result. ' .</p> ';
                             }
                         }
                     ?>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12 d-block">
                     <form class="mx-autor" action="" method="post">
-                        <div class="d-flex justify-content-center">
-                            <input type="hidden" name="result" value="<?php echo $result ?>">
-                            <input type="text" name="answer">
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-bg josephin text-white btn-sm mt-3 mb-3">Valider</button>
-                        </div>
-                        <div class="text-center">
-                            <?php 
+                            <div class="d-flex justify-content-center">
+                                <input type="hidden" name="result" value="<?php echo $result ?>">
+                                <input type="text" name="answer">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit"
+                                    class="btn btn-bg josephin text-white btn-sm mt-3 mb-3">Valider</button>
+                            </div>
+                            <div class="text-center">
+                                <?php 
                                     if(isset($won)) echo $won;
                                     if(isset($lost)) echo $lost;
                                 ?>
-                    </form>
+                        </form>
                 </div>
             </div>
 
+    
 
 
-
-
+            </div>
         </div>
-    </div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src='js/script.js' async></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src='js/script.js' async></script>
 
 
 

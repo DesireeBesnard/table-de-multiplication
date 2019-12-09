@@ -61,7 +61,7 @@
                                 <option value="10">Table de 10</option>
                             </select>
                         </div>
-                        <div class="col-12 d-flex justify-content-center pt-2">
+                        <div class="col-12 d-flex justify-content-center pt-4">
                         <button type="submit" class="btn btn-bg btn-sm text-white josephin mt-3 mx-auto mt-5 mb-5">Valider</button>
                     </div>
                 </form>
@@ -69,13 +69,12 @@
 
             <div class="text-center">
                 <?php 
-                    $listValueOption = $_POST['tablemultiplication'];
-                    echo '<div class="ç pb-4">';
-                    if(isset($listValueOption)){
-                        if(!empty($listValueOption)){
-                            echo '<div class="bg-white affichageresult mx-auto josephin pb-3">';
-                            echo '<h3 class="mx-auto mt-2 pt-3">Table du '.$listValueOption.'</h3>'; 
-                        }
+                    
+                    echo '<div class="pb-4">';
+                    if (!empty($_POST) && isset($_POST['tablemultiplication'])){   
+                        $listValueOption = $_POST['tablemultiplication'];
+                        echo '<div class="bg-white affichageresult mx-auto josephin pb-3">';
+                        echo '<h3 class="mx-auto mt-2 pt-3">Table du '.$listValueOption.'</h3>'; 
                     }
                     for ($nombre=1; $nombre <= 10; $nombre++){
                         if (isset($listValueOption)){

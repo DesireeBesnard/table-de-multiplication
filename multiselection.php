@@ -100,9 +100,9 @@
                             // echo "<div class=' mr-5 mb-5 pl-5'>";
                             echo "<div class='bg-white multiselectionresult mx-auto josephin mb-4 pt-3 pb-3'>";
                             echo '<h3 class="text-center"> Table du '.$tableauvaleurs.'</h3>';
-                                for ($nombre=1; $nombre <= 10; $nombre++){
+                                for ($i=1; $i <= 10; $i++){
                                     echo "<div class='text-center'>";
-                                    echo $nombre.'x' .$tableauvaleurs. '=' .$nombre*$tableauvaleurs;
+                                    echo $tableauvaleurs.'x' .$i. '=' .$i*$tableauvaleurs;
                                     echo" </div>";
                                 }
                             echo "</div>";

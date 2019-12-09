@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="container-fluid affichertable">
+    <div class="container-fluid">
 
         <div>
             <div class="navbar navbar-default navbar-fixed-top">
@@ -41,11 +41,11 @@
     </div>
 
 
-    <div class="container-fluid multiselection mb-5 pt-5">
+    <div class="container-fluid multiselection pt-5">
         <div class="container mt-5">
             <div class="row pt-5 d-block">
                 <h1 class="josephin text-white text-center mb-5">Multisélection</h1>
-                <h2 class="text-center  text-white josephin mt-0 mb-4">Afficher une ou plusieurs tables</h2>
+                <h2 class="text-center  text-white josephin mb-4">Afficher une ou plusieurs tables</h2>
                 <div class="row pt-2">
                     <form class="mx-auto secondtable" action="multiselection.php" method="post">
 

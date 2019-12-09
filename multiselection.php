@@ -93,6 +93,9 @@
                 <div class="row d-flex flex-wrap mt-5">
 
                     <?php
+
+                    if (!empty($_POST) && isset($_POST['table'])){
+
                         foreach($_POST['table'] as $tableauvaleurs){
                             // echo "<div class=' mr-5 mb-5 pl-5'>";
                             echo "<div class='bg-white multiselectionresult mx-auto josephin mb-4 pt-3 pb-3'>";
@@ -104,6 +107,8 @@
                                 }
                             echo "</div>";
                         }
+
+                    }    
                     ?>
 
                 </div>

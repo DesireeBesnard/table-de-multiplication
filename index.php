@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Table de multiplication</title>
+    <title>PHP multiplication</title>
 </head>
 
 <body>
@@ -15,6 +15,7 @@
     <div class="container-fluid affichertable">
 
         <div>
+
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="brand-icon">Super<span class="color-change">Maths</span>PHP</div>
                 <div class="menu-icon">
@@ -33,11 +34,14 @@
                     </ul>
                 </div>
             </div>
+
         </div>
+
     </div>
 
-    <div class="container-fluid mb-5 pt-5">
-        <div class="container affichage mt-5 mb-5 pt-5 pb-5">
+    <div class="container-fluid pt-5">
+        <div class="container affichage mt-5 pt-5">
+
             <div class="row">
                 <h1 class="josephin text-white mx-auto mb-5">Table de multiplication</h1>
             </div>
@@ -61,26 +65,27 @@
                                 <option value="10">Table de 10</option>
                             </select>
                         </div>
-                        <div class="col-12 d-flex justify-content-center pt-4">
-                        <button type="submit" class="btn btn-bg btn-sm text-white josephin mt-3 mx-auto mt-5 mb-5">Valider</button>
-                    </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-bg btn-sm text-white josephin mx-auto mt-3 mb-5">Valider</button>
+                        </div>
                 </form>
             </div>
 
             <div class="text-center">
                 <?php 
-                    
                     echo '<div class="pb-4">';
+
                     if (!empty($_POST) && isset($_POST['tablemultiplication'])){   
                         $listValueOption = $_POST['tablemultiplication'];
                         echo '<div class="bg-white affichageresult mx-auto josephin pb-3">';
                         echo '<h3 class="mx-auto mt-2 pt-3">Table du '.$listValueOption.'</h3>'; 
                     }
-                    for ($nombre=1; $nombre <= 10; $nombre++){
+                    for ($i=1; $i <= 10; $i++){
                         if (isset($listValueOption)){
-                            echo $listValueOption.'*'.$nombre.'='.$listValueOption*$nombre."<br/>";
+                            echo $listValueOption.'*'.$i.'='.$listValueOption*$i."<br/>";
                         }
                     }
+
                     echo '</div>';
                     echo '</div>';
                 ?>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <div>
+            <input type="text" name="name" id="name">
+        </div>
+        <button type="submit">Valider</button>
+    </form>
+
+    <div id="reponse"></div>
+
+
+
+
+    <script>
+        //selectionne le formulaire
+        const myForm = document.querySelector('form');
+
+        //affecte une écoute d'évènement submit
+        myForm.addEventListener('submit', function(e){
+            //on interrompt l'évènement par défault donc le formulaire ne partira plus
+            e.preventDefault();
+            
+            //sélectionne la case du formulaire
+            nameInpt = document.querySelector('#name');
+
+            //on éxecute une promesse (ajax)
+            //alt gr 7 +espaces pour les backquotes
+            fetch(`traitement.php?name=${nameInpt.value}`)
+            .then(function(theResponse){
+                return theResponse.text();
+            })
+            .then(function(datas){
+                const myDiv = document.querySelector('#reponse');
+                //On met la réponse dans le paragraphe
+                myDiv.innerHTML = datas;
+            });
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>

@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="container-fluid affichertable">
+    <div class="container-fluid">
 
         <div>
             <div class="navbar navbar-default navbar-fixed-top">

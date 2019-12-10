@@ -48,10 +48,10 @@
 
             <div class="row d-block">
                 <h2 class="text-center josephin text-white pt-2">Afficher une table</h2>
-                <form action="" method="POST">
+                <form action="#" class="indexForm">
                     <div class="form-row align-items-center">
                         <div class="col-12 d-flex justify-content-center">
-                            <select class="custom-select" name="tablemultiplication">
+                            <select class="custom-select" id="tablemultiplication">
                                 <option selected disabled>Choisir</option>
                                 <option value="1">Table de 1</option>
                                 <option value="2">Table de 2</option>
@@ -71,24 +71,8 @@
                 </form>
             </div>
 
-            <div class="text-center">
-                <?php 
-                    echo '<div class="pb-4">';
-
-                    if (!empty($_POST) && isset($_POST['tablemultiplication'])){   
-                        $listValueOption = $_POST['tablemultiplication'];
-                        echo '<div class="bg-white affichageresult mx-auto josephin pb-3">';
-                        echo '<h3 class="mx-auto mt-2 pt-3">Table du '.$listValueOption.'</h3>'; 
-                    }
-                    for ($i=1; $i <= 10; $i++){
-                        if (isset($listValueOption)){
-                            echo $listValueOption.'*'.$i.'='.$listValueOption*$i."<br/>";
-                        }
-                    }
-
-                    echo '</div>';
-                    echo '</div>';
-                ?>
+            <div class="text-center indexanswer pb-4 mx-auto josephin">
+            
             </div>
 
         </div>
@@ -99,8 +83,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src='js/script.js' async></script>
+    <script>
+        const myIndexForm = document.querySelector('.indexForm');
 
+        myIndexForm.addEventListener('submit', function(e){
+            e.preventDefault();
 
+            indexOptions = document.querySelector('#tablemultiplication');
+
+            fetch(`treatment.php?tableindexvalue=${indexOptions.value}`)
+            .then(function(theIndexResponse){
+                return theIndexResponse.text();
+            })
+            .then(function(indexDatas){
+                const myIndexPara = document.querySelector('.indexanswer');
+                myIndexPara.innerHTML = indexDatas;
+            });
+
+        })
+    
+    </script>
 
 </body>
 

@@ -47,41 +47,28 @@
                 <h1 class="josephin text-white text-center mb-5">Multisélection</h1>
                 <h2 class="text-center  text-white josephin mb-4">Afficher une ou plusieurs tables</h2>
                 <div class="row pt-2">
-                    <form class="mx-auto secondtable" action="multiselection.php" method="post">
+                    <form class="mx-auto multiselectionForm" action="#" name="checkselectform" >
 
                         <div class="d-flex text-white josephin">
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="1" id="table_1"
-                                    class="mr-2 mt-1"> <label for="table_1">Table du 1</label>
-                            </div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="1" class="mr-2 mt-1 secondtable"> <label for="table_1">Table du 1</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="2" id="table_2"
-                                    class="mr-1 mt-1"> <label for="table_2">Table du 2</label>
-                            </div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="2" class="mr-1 mt-1 secondtable"> <label for="table_2">Table du 2</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="3" id="table_3"
-                                    class="mr-1 mt-1"> <label for="table_3">Table du 3</label></div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="3" class="mr-1 mt-1 secondtable"> <label for="table_3">Table du 3</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="4" id="table_4"
-                                    class="mr-1 mt-1"> <label for="table_4">Table du 4</label></div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="4" class="mr-1 mt-1 secondtable"> <label for="table_4">Table du 4</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="5" id="table_5"
-                                    class="mr-1 mt-1"> <label for="table_5">Table du 5</label></div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="5" class="mr-1 mt-1 secondtable"> <label for="table_5">Table du 5</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="6" id="table_6"
-                                    class="mr-1 mt-1"> <label for="table_6">Table du 6</label></div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="6" class="mr-1 mt-1 secondtable"> <label for="table_6">Table du 6</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="7" id="table_7"
-                                    class="mr-1 mt-1"> <label for="table_7">Table du 7</label></div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="7" class="mr-1 mt-1 secondtable"> <label for="table_7">Table du 7</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="8" id="table_8"
-                                    class="mr-1 mt-1"> <label for="table_8">Table du 8</label></div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="8" class="mr-1 mt-1 secondtable"> <label for="table_8">Table du 8</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="9" id="table_9"
-                                    class="mr-1 mt-1"> <label for="table_9">Table du 9</label></div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="9" class="mr-1 mt-1 secondtable"> <label for="table_9">Table du 9</label></div>
 
-                            <div class="d-flex mr-3"><input type="checkbox" name="table[]" value="10" id="table_10"
-                                    class="mr-1 mt-1"> <label for="table_10">Table du 10</label></div>
-                        </div>
+                            <div class="d-flex mr-3"><input type="checkbox" name="secondtable[]" value="10" class="mr-1 mt-1 secondtable"> <label for="table_10">Table du 10</label></div></div>
 
                         <div class="d-flex justify-content-center pt-2">
                             <button type="submit" class="btn btn-bg text-white josephin btn-sm mt-5 mx-auto">Valider</button>
@@ -90,26 +77,7 @@
                     </form>
                 </div>
 
-                <div class="row d-flex flex-wrap mt-5">
-
-                    <?php
-
-                    if (!empty($_POST) && isset($_POST['table'])){
-
-                        foreach($_POST['table'] as $tableauvaleurs){
-                            // echo "<div class=' mr-5 mb-5 pl-5'>";
-                            echo "<div class='bg-white multiselectionresult mx-auto josephin mb-4 pt-3 pb-3'>";
-                            echo '<h3 class="text-center"> Table du '.$tableauvaleurs.'</h3>';
-                                for ($i=1; $i <= 10; $i++){
-                                    echo "<div class='text-center'>";
-                                    echo $tableauvaleurs.'x' .$i. '=' .$i*$tableauvaleurs;
-                                    echo" </div>";
-                                }
-                            echo "</div>";
-                        }
-
-                    }    
-                    ?>
+                <div class="row d-flex flex-wrap multiselectionanswer mt-5">
 
                 </div>
 
@@ -123,9 +91,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src='js/script.js' async></script>
+    <script>
+        const myMultiselectionForm = document.querySelector('.multiselectionForm');
 
+        myMultiselectionForm.addEventListener('submit', function(e){
+            e.preventDefault();
 
-
+            multiselectionOptions = document.querySelectorAll('.secondtable');
+       
+            //création d'un formulaire virtuel
+            datas = new FormData(myMultiselectionForm);
+            
+            //Ajout des éléments dans le formulaire virtuel
+            // php récupère ce que je mets dans le append seulement
+            datas.append('secondtable[]', multiselectionOptions.value);
+          
+            //Promesse ajax
+            fetch('treatment.php', {
+                method: "POST",
+                body: datas
+            }).then (function(theResponse){
+                return theResponse.text();
+            }).then ( function( result){
+                myMultiselectionDiv = document.querySelector('.multiselectionanswer');
+                myMultiselectionDiv.innerHTML = result;
+            })
+            
+})
+    
+    </script>
 </body>
 
 </html>

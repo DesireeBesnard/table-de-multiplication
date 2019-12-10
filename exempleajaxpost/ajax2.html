@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text" name="firstname" id="firstname">
+        <input type="text" name="lastname" id="lastname">
+
+        <div>
+            <button type="submit">Afficher</button>
+        </div>
+    </form>
+
+    <div id="reponse">
+
+    </div>
+
+
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        
+        firstName = document.querySelector('#firstname');
+        lastName = document.querySelector('#lastname');
+
+        //création d'un formulaire virtuel
+        datas = new FormData();
+
+        //Ajout des éléments dans le formulaire virtuel
+        // php récupère ce que je mets dans le append seulement
+        datas.append('firstname', firstName.value);
+        datas.append('lastname', lastName.value);
+
+        //Promesse ajax
+        fetch('traitement2.php', {
+            method: "POST",
+            body: datas
+        }).then (function(theResponse){
+            return theResponse.text();
+        }).then( function( result){
+            myDiv = document.querySelector('#reponse');
+            myDiv.innerHTML = result;
+        })
+
+    })
+
+</script>
+
+</body>
+</html>
